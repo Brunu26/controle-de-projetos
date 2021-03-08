@@ -18,7 +18,7 @@ public class Aluno implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id; 
 	private String nome;
-	private Integer matricula;
+	private String matricula;
 	
 	@ManyToMany(mappedBy = "alunos")
 	private List<Turma>  turma = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Aluno implements Serializable{
 	}
 	
 	
-	public Aluno(Integer id, String nome, Integer matricula) {
+	public Aluno(Integer id, String nome, String matricula) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -47,10 +47,10 @@ public class Aluno implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(Integer matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 		
 	}
