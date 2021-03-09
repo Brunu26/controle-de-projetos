@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Turma implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -20,7 +22,7 @@ public class Turma implements Serializable{
 	private Integer id;
 	private String nome;
 	
-
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "turma_alunos",
 	joinColumns = @JoinColumn(name = "turma_id"),
